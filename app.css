@@ -10,7 +10,7 @@ body {
 	margin-left: 15%;
 	opacity: 50;
 	background-color: white;
-	opacity: 0.9;
+	opacity: 0.8;
 	margin-bottom: 20em;
 	padding: 2px;
 }
@@ -26,16 +26,32 @@ body {
 
 p {
 	text-align: center;
-	margin-top: 6em;
-	margin-bottom: 6em;
+	margin-top: 4em;
 }
 
 h1 {
 	text-align: center;
 	margin-top: 4em;
-	margin-bottom: 4em;
+	margin-bottom: 2em;
 }
+ #buttons{
+ 	margin-left: 45.8%;
+ }
 
+ #fer {
+ 	background-color: #444;
+ 	color: white;
+ }
+
+ #cel {
+ 	background-color: #444;
+ 	color: white;
+ }
+
+ #kel {
+ 	background-color: #444;
+ 	color: white;
+ }
 /*button*/
 
 form {
@@ -53,6 +69,7 @@ form {
 	padding: none;
 	margin-right: 5%;
 	opacity: none;
+	box-shadow: 3px 3px 3px #444;
 }
 
 /*input*/
@@ -64,4 +81,10 @@ form {
  	margin-top: 2em;
  	margin-right: 5%;
  	opacity: none;
+ 	text-align: center;
+ 	box-shadow: 3px 3px 3px #444;
+ }
+
+ #all {
+ 	display: none;
  }

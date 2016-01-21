@@ -16,7 +16,21 @@ $(document).ready(function(){
   						url: 'http://api.openweathermap.org/data/2.5/weather?q=' + currentCity + '&appid=2de143494c0b295cca9337e1e96b00e0',
   						method: "GET",
   						success: function(data) {
-  							$('#weather').text(data.weather[0].main);
+  							$('#spinner').hide();
+  							$('#all').show();
+							var cel = toCel(data.main.temp);
+  							$('#weather').text('The weather is: ' + data.weather[0].main);
+  							$('#temp').text('Temperature(C): ' + cel);
+  							$('#fer').on('click', function(){
+								var fer = toFer(cel);
+								$('#temp').text('Temperature(F): ' + fer);
+							});
+							$('#cel').on('click', function(){
+								$('#temp').text('Temperature(C): ' + cel);
+							});
+							$('#kel').on('click', function(){
+								$('#temp').text('Temperature(K): ' + data.main.temp);
+							});
   						}
   					});
 
@@ -34,10 +48,38 @@ $(document).ready(function(){
 			method: "GET",
 			success: function(data) {
 				console.log(data);
-				$('#weather').text(data.weather[0].main);
+				var cel = toCel(data.main.temp);
+				$('#temp').text('Temperature(C): ' + cel);
+				$('#weather').text('The weather is: ' + data.weather[0].main);
     			$('#longitude').text('Longitude: ' + data.coord.lon);
     			$('#latitude').text('Latitude: ' + data.coord.lat);
+    			$('#fer').on('click', function(){
+					var fer = toFer(cel);
+					$('#temp').text('Temperature(F): ' + fer);
+				});
+				$('#cel').on('click', function(){
+					$('#temp').text('Temperature(C): ' + cel);
+				});
+				$('#kel').on('click', function(){
+					$('#temp').text('Temperature(K): ' + data.main.temp);
+				});
 			}
 		});
 	});
+	function toFer (num) {
+		var fer = (((9/5) * num) + 32);
+		fer = Math.round(fer * 100) / 100;
+		return fer;
+	}
+
+	function toCel (num) {
+		var cel = (num - 273.15);
+		cel = Math.round(cel * 100) / 100;
+		return cel;
+	}x
 });
+
+
+
+
+

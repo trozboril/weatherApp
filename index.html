@@ -7,14 +7,23 @@
 	<body background="http://img.phombo.com/img1/photocombo/2865/Mount_Saint_Helens_and_Spirit_Lake_Washington_-.jpg">
 		<div id="outer">
 			<div id="container">
-				<p id="ipAddress">...</p>
-				<p id="longitude">...</p>
-				<p id="latitude">...</p>
-				<h1 id="weather">...</h1>
-				<form>
-					<input id="city" type="text" name="city">
-					<button id="submit" type="button" name="submit">Submit</button>
-				</form>	
+				<div id="spinner"><img src="spin.gif"></div>
+				<div id="all">
+					<p id="ipAddress">...</p>
+					<p id="longitude">...</p>
+					<p id="latitude">...</p>
+					<p id="temp">...</p>
+					<div id='buttons'>
+						<button id="fer" type="button">F</button>
+						<button id="cel" type="button">C</button>
+						<button id="kel" type="button">K</button>
+					</div>
+					<h1 id="weather">...</h1>
+					<form>
+						<input id="city" type="text" name="city">
+						<button id="submit" type="button" name="submit">Submit</button>
+					</form>	
+				</div>
 			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
