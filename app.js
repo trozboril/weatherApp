@@ -13,7 +13,7 @@ $(document).ready(function(){
     				$('#latitude').text('Latitude: ' + info.latitude);
     				var currentCity = info.city;
     				$.ajax({
-  						url: 'http://api.openweathermap.org/data/2.5/weather?q=' + currentCity + '&appid=2de143494c0b295cca9337e1e96b00e0',
+  						url: 'http://api.openweathermap.org/data/2.5/weather?q=' + currentCity + '&appid=759c6daadfde1d47adfa9da725450e1f',
   						method: "GET",
   						success: function(data) {
   							$('#spinner').hide();
@@ -76,7 +76,7 @@ $(document).ready(function(){
 		var cel = (num - 273.15);
 		cel = Math.round(cel * 100) / 100;
 		return cel;
-	}x
+	}
 });
 
 

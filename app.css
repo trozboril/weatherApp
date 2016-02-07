@@ -22,6 +22,10 @@ body {
 	margin-left: 5%;
 }
 
+#spinner {
+	margin-top: 20px;
+}
+
 /*text*/
 
 p {
