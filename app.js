@@ -18,11 +18,11 @@ $(document).ready(function(){
   						success: function(data) {
   							$('#spinner').hide();
   							$('#all').show();
-							var cel = toCel(data.main.temp);
+							var cel = toCelDeg(data.main.temp);
   							$('#weather').text('The weather is: ' + data.weather[0].main);
   							$('#temp').text('Temperature(C): ' + cel);
   							$('#fer').on('click', function(){
-								var fer = toFer(cel);
+								var fer = toFerDeg(cel);
 								$('#temp').text('Temperature(F): ' + fer);
 							});
 							$('#cel').on('click', function(){
@@ -48,13 +48,13 @@ $(document).ready(function(){
 			method: "GET",
 			success: function(data) {
 				console.log(data);
-				var cel = toCel(data.main.temp);
+				var cel = toCelDeg(data.main.temp);
 				$('#temp').text('Temperature(C): ' + cel);
 				$('#weather').text('The weather is: ' + data.weather[0].main);
     			$('#longitude').text('Longitude: ' + data.coord.lon);
     			$('#latitude').text('Latitude: ' + data.coord.lat);
     			$('#fer').on('click', function(){
-					var fer = toFer(cel);
+					var fer = toFerDeg(cel);
 					$('#temp').text('Temperature(F): ' + fer);
 				});
 				$('#cel').on('click', function(){
@@ -66,13 +66,13 @@ $(document).ready(function(){
 			}
 		});
 	});
-	function toFer (num) {
+	function toFerDeg (num) {
 		var fer = (((9/5) * num) + 32);
 		fer = Math.round(fer * 100) / 100;
 		return fer;
 	}
 
-	function toCel (num) {
+	function toCelDeg (num) {
 		var cel = (num - 273.15);
 		cel = Math.round(cel * 100) / 100;
 		return cel;
